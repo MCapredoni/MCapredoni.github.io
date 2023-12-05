@@ -10,16 +10,27 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-45546538-4');
+
+        class YearElement extends HTMLElement{
+            connectedCallback(){
+                this.innerHTML = new Date().getFullYear();
+            }
+        }
+
+        customElements.define("x-fullyear", YearElement);
+
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#2196F3">
     <title>Marc Capredoni</title>
 
+</head>
+
     <!-- CSS  -->
     <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="min/custom-min.css" type="text/css" rel="stylesheet">
-</head>
+
 
 <body id="top" class="scrollspy">
     <!-- Header -->
@@ -216,7 +227,7 @@
         
         <div class="footer-copyright default_color">
             <div class="container">
-                Made by Marc Capredoni</a>. 
+                &copy; Marc Capredoni <x-fullyear></x-fullyear>
             </div>
         </div>
     </footer>
